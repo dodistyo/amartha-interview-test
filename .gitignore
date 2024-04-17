@@ -1,2 +1,3 @@
 /.powerpipe
 .mod.cache.json
+*.html
