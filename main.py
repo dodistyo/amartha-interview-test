@@ -9,12 +9,13 @@ class AmarthaSecurityTool:
     def __init__(self):
         #Check prerequisites
         prerequisites = subprocess.run("""
-        steampipe --version &&
+        steampipes --version &&
         powerpipe --version
         """, shell=True, capture_output=True, text=True)
         if prerequisites.returncode != 0:
             # Print the error checking
             sys.stderr.write("\033[91m An error occurred when checking the prerequisites: {0} \033[0m \n".format(prerequisites.stderr))
+            sys.exit()
 
     def cloud_scan(self):
         # Shell command to execute
