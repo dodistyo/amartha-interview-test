@@ -9,7 +9,7 @@ class AmarthaSecurityTool:
     def __init__(self):
         #Check prerequisites
         prerequisites = subprocess.run("""
-        steampipes --version &&
+        steampipe --version &&
         powerpipe --version
         """, shell=True, capture_output=True, text=True)
         if prerequisites.returncode != 0:
